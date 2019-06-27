@@ -16,25 +16,6 @@ module.exports = require('./webpack.base.babel')({
   },
 
   plugins: [
-
-    // Minify and optimize the index.html
-    new HtmlWebpackPlugin({
-      template: 'src/index.html',
-      minify: {
-        removeComments: true,
-        collapseWhitespace: true,
-        removeRedundantAttributes: true,
-        useShortDoctype: true,
-        removeEmptyAttributes: true,
-        removeStyleLinkTypeAttributes: true,
-        keepClosingSlash: true,
-        minifyJS: true,
-        minifyCSS: true,
-        minifyURLs: true,
-      },
-      inject: true
-    }),
-
     // separate css
     new MiniCssExtractPlugin({
       // Options similar to the same options in webpackOptions.output

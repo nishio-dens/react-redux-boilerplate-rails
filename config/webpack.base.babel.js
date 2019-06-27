@@ -11,13 +11,13 @@ const ManifestPlugin = require('webpack-assets-manifest');
 process.noDeprecation = true;
 
 // load entries
-const entries = path.join(process.cwd(), 'src', 'entries');
+const entries = path.join(process.cwd(), 'frontend', 'entries');
 const targets = glob.sync(path.join(entries, '**/*.{js,jsx,ts,tsx}'));
 const entry = targets.reduce((entry, target) => {
   const bundle = path.relative(entries, target)
   const ext = path.extname(bundle)
   return Object.assign({}, entry, {
-    [bundle.replace(ext, '')]: path.join(process.cwd(), 'src', 'entries', bundle),
+    [bundle.replace(ext, '')]: path.join(process.cwd(), 'frontend', 'entries', bundle),
   })
 }, {});
 
@@ -27,8 +27,8 @@ module.exports = (options) => ({
   output: Object.assign(
     {
       // Compile into js/build.js
-      path: path.resolve(process.cwd(), 'build'),
-      publicPath: '/'
+      path: path.resolve(process.cwd(), 'public', 'build'),
+      publicPath: '/build/'
     },
     options.output
   ), // Merge with env dependent settings
@@ -113,11 +113,12 @@ module.exports = (options) => ({
 
     // Dump manifest.json
     new ManifestPlugin({
-      entrypoints: true
+      entrypoints: true,
+      publicPath: "/build/"
     })
   ]),
   resolve: {
-    modules: ['src', 'node_modules'],
+    modules: ['frontend', 'node_modules'],
     extensions: ['.js', '.jsx', '.scss', '.react.js'],
     mainFields: ['browser', 'jsnext:main', 'main']
   },

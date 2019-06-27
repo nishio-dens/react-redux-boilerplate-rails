@@ -11,7 +11,7 @@ module.exports = {
   plugins: ['@babel/plugin-proposal-class-properties', '@babel/plugin-syntax-dynamic-import'],
   env: {
     production: {
-      only: ['src'],
+      only: ['frontend'],
       plugins: [
         'lodash',
         'transform-react-remove-prop-types',
