@@ -1,3 +1,24 @@
+require 'rack/proxy'
+
+class DevServerProxy < Rack::Proxy
+  def perform_request(env)
+    if env['PATH_INFO'].start_with?('/build/')
+      env['HTTP_HOST'] = dev_server_host
+      env['HTTP_X_FORWARDED_HOST'] = dev_server_host
+      env['HTTP_X_FORWARDED_SERVER'] = dev_server_host
+      super
+    else
+      @app.call(env)
+    end
+  end
+
+  private
+
+  def dev_server_host
+    "localhost:4000"
+  end
+end
+
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
@@ -58,4 +79,6 @@ Rails.application.configure do
   # Use an evented file watcher to asynchronously detect changes in source code,
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
+
+  config.middleware.use DevServerProxy, ssl_verify_none: true
 end
