@@ -9,7 +9,14 @@
     "allowSyntheticDefaultImports": true,
     "noImplicitThis": true, 
     "baseUrl": "./",
-    "jsx": "react"
+    "jsx": "react",
+    "paths": {
+      "images/*": [ "frontend/images/*" ]
+    },
+    "typeRoots": [
+      "node_modules/@types",
+      "types"
+    ]
   },
   "include": [
     "./frontend/**/*.ts",
