@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "es2015",
+    "sourceMap": true,
+    "importHelpers": true,
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "noImplicitThis": true, 
+    "baseUrl": "./",
+    "jsx": "react",
+    "paths": {
+      "images/*": [ "frontend/images/*" ]
+    },
+    "typeRoots": [
+      "node_modules/@types",
+      "types"
+    ]
+  },
+  "include": [
+    "./frontend/**/*.ts",
+    "./frontend/**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

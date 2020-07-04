@@ -7,6 +7,7 @@ const path = require('path');
 const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const ManifestPlugin = require('webpack-assets-manifest');
+const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 
 process.noDeprecation = true;
 
@@ -40,6 +41,16 @@ module.exports = (options) => ({
         use: {
           loader: 'babel-loader',
           options: options.babelQuery
+        }
+      },
+      {
+        test: /\.(ts|tsx)$/, 
+        exclude: /node_modules/,
+        use: {
+          loader: 'ts-loader',
+          options: {
+            transpileOnly: true
+          }
         }
       },
       {
@@ -115,11 +126,13 @@ module.exports = (options) => ({
     new ManifestPlugin({
       entrypoints: true,
       publicPath: "/build/"
-    })
+    }),
+
+    new ForkTsCheckerWebpackPlugin(),
   ]),
   resolve: {
     modules: ['frontend', 'node_modules'],
-    extensions: ['.js', '.jsx', '.scss', '.react.js'],
+    extensions: ['.js', '.jsx', '.ts', '.tsx', '.scss', '.react.js'],
     mainFields: ['browser', 'jsnext:main', 'main']
   },
   devtool: options.devtool,
