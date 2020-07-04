@@ -1,17 +1,23 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "module": "es2015",
+    "module": "amd",
     "sourceMap": true,
     "importHelpers": true,
     "esModuleInterop": true,
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
-    "noImplicitThis": true, 
+    "noImplicitThis": false, 
+    "noImplicitAny": false,
     "baseUrl": "./",
     "jsx": "react",
     "paths": {
-      "images/*": [ "frontend/images/*" ]
+      "features/*": [ "frontend/features/*" ],
+      "components/*": [ "frontend/components/*" ],
+      "styles/*": [ "frontend/styles/*" ],
+      "images/*": [ "frontend/images/*" ],
+      "utils/*": [ "frontend/utils/*" ],
+      "modules/*": [ "frontend/modules/*" ]
     },
     "typeRoots": [
       "node_modules/@types",

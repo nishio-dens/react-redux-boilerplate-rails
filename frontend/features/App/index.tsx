@@ -13,30 +13,36 @@ const routes = [
   { path: "",        exact: false, loader: () => import("features/NotFoundPage") },
 ];
 
-const routesWithLoader = routes.map(r => {
+const routesWithLoader = routes.map((r) => {
   const component = Loadable({
     loader: r.loader,
-    loading: LoadingIndicator
+    loading: LoadingIndicator,
   });
   return Object.assign({}, r, { component: component });
 });
-const App = () => (
-  <div className="app-wrapper">
-    <Helmet
-      titleTemplate="%s - React Boilerplate"
-      defaultTitle="React Boilerplate"
-    >
-      <meta name="description" content="A React Boilerplate application" />
-    </Helmet>
-    <Header />
-    <Switch>
-      {
-        routesWithLoader.map(r =>
-          <Route key={`react-router-route-${r.path}`} path={r.path} exact={r.exact} component={r.component} />
-        )
-      }
-    </Switch>
-  </div>
-);
+
+const App = () => {
+  return (
+    <div className="app-wrapper">
+      <Helmet
+        titleTemplate="%s - React Boilerplate"
+        defaultTitle="React Boilerplate"
+      >
+        <meta name="description" content="A React Boilerplate application" />
+      </Helmet>
+      <Header />
+      <Switch>
+        {routesWithLoader.map((r) => (
+          <Route
+            key={`react-router-route-${r.path}`}
+            path={r.path}
+            exact={r.exact}
+            component={r.component}
+          />
+        ))}
+      </Switch>
+    </div>
+  );
+};
 
 export default App;
