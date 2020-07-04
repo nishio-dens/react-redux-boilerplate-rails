@@ -7,6 +7,10 @@ import { routerMiddleware } from 'connected-react-router/immutable';
 import thunk from 'redux-thunk';
 import createReducer from './reducers';
 
+declare namespace window {
+  export const __REDUX_DEVTOOLS_EXTENSION_COMPOSE__: Function | undefined;
+}
+
 export default function configureStore(initialState = {}, history) {
   const middlewares = [thunk, routerMiddleware(history)];
   const enhancers = [applyMiddleware(...middlewares)];
@@ -21,9 +25,6 @@ export default function configureStore(initialState = {}, history) {
   /* eslint-enable */
 
   const store = createStore(createReducer(), initialState, composeEnhancers(...enhancers));
-
-  // Extensions
-  store.injectedReducers = {}; // Reducer registry
 
   return store;
 }
