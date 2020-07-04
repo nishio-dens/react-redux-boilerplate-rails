@@ -6677,6 +6677,10 @@ redent@^1.0.0:
     indent-string "^2.1.0"
     strip-indent "^1.0.1"
 
+redux-actions-type@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/redux-actions-type/-/redux-actions-type-1.0.0.tgz#6825b86a260c577cbdfd2a95a826b936a2be8ce2"
+
 redux-thunk@^2.3.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/redux-thunk/-/redux-thunk-2.3.0.tgz#51c2c19a185ed5187aaa9a2d08b666d0d6467622"
