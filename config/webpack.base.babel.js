@@ -44,7 +44,7 @@ module.exports = (options) => ({
         }
       },
       {
-        test: /\.ts$/, 
+        test: /\.(ts|tsx)$/, 
         exclude: /node_modules/,
         use: {
           loader: 'ts-loader',
@@ -132,7 +132,7 @@ module.exports = (options) => ({
   ]),
   resolve: {
     modules: ['frontend', 'node_modules'],
-    extensions: ['.js', '.jsx', '.scss', '.react.js'],
+    extensions: ['.js', '.jsx', '.ts', '.tsx', '.scss', '.react.js'],
     mainFields: ['browser', 'jsnext:main', 'main']
   },
   devtool: options.devtool,

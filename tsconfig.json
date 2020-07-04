@@ -8,7 +8,8 @@
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
     "noImplicitThis": true, 
-    "baseUrl": "./"
+    "baseUrl": "./",
+    "jsx": "react"
   },
   "include": [
     "./frontend/**/*.ts",
