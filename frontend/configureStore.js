@@ -3,7 +3,7 @@
  */
 
 import { createStore, applyMiddleware, compose } from 'redux';
-import { routerMiddleware } from 'connected-react-router';
+import { routerMiddleware } from 'connected-react-router/immutable';
 import thunk from 'redux-thunk';
 import createReducer from './reducers';
 
