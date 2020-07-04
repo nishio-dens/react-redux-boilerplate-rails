@@ -12,7 +12,9 @@
     "baseUrl": "./",
     "jsx": "react",
     "paths": {
-      "images/*": [ "frontend/images/*" ]
+      "images/*": [ "frontend/images/*" ],
+      "utils/*": [ "frontend/utils/*" ],
+      "modules/*": [ "frontend/modules/*" ]
     },
     "typeRoots": [
       "node_modules/@types",
