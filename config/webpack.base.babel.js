@@ -43,6 +43,16 @@ module.exports = (options) => ({
         }
       },
       {
+        test: /\.ts$/, 
+        exclude: /node_modules/,
+        use: {
+          loader: 'ts-loader',
+          options: {
+            transpileOnly: true
+          }
+        }
+      },
+      {
         // Preprocess our own .scss files
         test: /\.(sa|sc|c)ss$/,
         exclude: /node_modules/,
