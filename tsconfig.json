@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "module": "es2020",
+    "module": "amd",
     "sourceMap": true,
     "importHelpers": true,
     "esModuleInterop": true,
@@ -12,6 +12,9 @@
     "baseUrl": "./",
     "jsx": "react",
     "paths": {
+      "features/*": [ "frontend/features/*" ],
+      "components/*": [ "frontend/components/*" ],
+      "styles/*": [ "frontend/styles/*" ],
       "images/*": [ "frontend/images/*" ],
       "utils/*": [ "frontend/utils/*" ],
       "modules/*": [ "frontend/modules/*" ]
