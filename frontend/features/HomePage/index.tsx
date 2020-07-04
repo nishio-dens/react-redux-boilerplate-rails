@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import './style.scss';
 import sampleImage from 'images/150x50.png';
 
-import { getUsers, addUser } from '../../modules/users';
+import { actions } from 'modules/users';
 
 const stateSelector = (state) => {
   return {
@@ -17,8 +17,8 @@ export default function HomePage() {
   const { users } = useSelector(stateSelector);
   const dispatch = useDispatch();
 
-  const onClickLoadUser = () => dispatch(getUsers());
-  const onClickAddUser = (name: string) => dispatch(addUser(name));
+  const onClickLoadUser = () => dispatch(actions.getUsers());
+  const onClickAddUser = (name: string) => dispatch(actions.addUser(name));
 
   return (
     <article>

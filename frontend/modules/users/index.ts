@@ -11,7 +11,7 @@ export const ActionTypes = {
   ADD: 'users/ADD',
 } as const;
 
-const actions = {
+export const actions = {
   loadRequest() {
     return { type: ActionTypes.LOAD_REQUEST };
   },
