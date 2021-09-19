@@ -6,9 +6,9 @@ Minipack.configuration do |c|
 
   # Register a path to a manifest file here. Right now you have to specify an absolute path.
   c.manifest = if Rails.env.development?
-                 'http://localhost:4000/build/manifest.json'
+                 'http://localhost:4000/build/assets-manifest.json'
                else
-                 Rails.root.join('public', 'build', 'manifest.json')
+                 Rails.root.join('public', 'build', 'assets-manifest.json')
                end
 
   # The base directory for the frontend system. By default, it will be

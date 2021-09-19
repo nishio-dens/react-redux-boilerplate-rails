@@ -50,13 +50,7 @@ module.exports = require('./webpack.base.babel')({
 
   devServer: {
     port: 4000,
-    contentBase: path.join(__dirname, "build"),
-    watchContentBase: true,
-    historyApiFallback: true,
-    inline: true,
-    stats: {
-      children: false,
-      maxModules: 0
-    }
+    static: "./build/",
+    historyApiFallback: true
   }
 });

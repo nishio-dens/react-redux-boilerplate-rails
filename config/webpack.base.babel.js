@@ -44,7 +44,7 @@ module.exports = (options) => ({
         }
       },
       {
-        test: /\.(ts|tsx)$/, 
+        test: /\.(ts|tsx)$/,
         exclude: /node_modules/,
         use: {
           loader: 'ts-loader',
@@ -138,6 +138,5 @@ module.exports = (options) => ({
   devtool: options.devtool,
   target: 'web', // Make web variables accessible to webpack, e.g. window
   performance: options.performance || {},
-  optimization: options.optimization || {},
   devServer: options.devServer || {}
 });
