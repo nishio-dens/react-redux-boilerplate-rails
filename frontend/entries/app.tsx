@@ -1,22 +1,22 @@
-import '@babel/polyfill';
+import "@babel/polyfill";
 
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import { ConnectedRouter } from 'connected-react-router/immutable';
-import history from '../utils/history';
-import 'sanitize.css/sanitize.css';
+import React from "react";
+import ReactDOM from "react-dom";
+import { Provider } from "react-redux";
+import { ConnectedRouter } from "connected-react-router/immutable";
+import history from "../utils/history";
+import "sanitize.css/sanitize.css";
 
-import App from '../features/App';
+import App from "../features/App";
 
-import '../images/favicon.ico';
-import '../styles/theme.scss';
+import "../images/favicon.ico";
+import "../styles/theme.scss";
 
-import configureStore from '../configureStore';
+import configureStore from "../configureStore";
 
 const initialState = {};
 const store = configureStore(initialState, history);
-const MOUNT_NODE = document.getElementById('app');
+const MOUNT_NODE = document.getElementById("app");
 
 const render = () => {
   ReactDOM.render(
