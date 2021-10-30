@@ -13,7 +13,7 @@ const stateSelector = (state) => {
   };
 };
 
-export default function HomePage() {
+const HomePage = () => {
   const { users } = useSelector(stateSelector);
   const dispatch = useDispatch();
 
@@ -56,4 +56,6 @@ export default function HomePage() {
       </div>
     </article>
   );
-}
+};
+
+export default HomePage;
