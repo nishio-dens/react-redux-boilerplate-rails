@@ -11,6 +11,7 @@ gem "uglifier"
 gem "minipack"
 gem "rack-proxy"
 gem "bootsnap", require: false
+gem "convergence-rails"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
