@@ -74,7 +74,7 @@ GEM
       convergence (>= 1.0.0)
     crass (1.0.6)
     diff-lcs (1.4.4)
-    diffy (3.4.0)
+    diffy (3.4.2)
     erubi (1.10.0)
     execjs (2.8.1)
     ffi (1.15.4)
